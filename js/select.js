@@ -137,20 +137,4 @@ function increaseMember(add) {
         
     }
 }
-
-function compute(number) {
-    var result = number * 5;
-    if(number == 0) {
-        progressBar(result);
-    }else {
-        progressBar(result + 25);
-    }
-    $('#show').html(result);
-}
-
-function progressBar(pro) {
-    $('#progress').width(pro + "%");
-    $('#progress').html(pro + "%");
-}
-
 // new Quantity = new guest * old quantity / old guest
