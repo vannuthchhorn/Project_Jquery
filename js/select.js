@@ -33,19 +33,25 @@ function chooseRecipe(recipes){
     $('#recipe').append(option);
 }
 // each recipes
+var gQuantity = [];
+
+var oldQuantity = 0;
 function eachRecipes(id){
     allData.forEach(item =>{
         if(item.id == id){
-            showRecipes(item.name, item.iconUrl);
+            showRecipes(item.name, item.iconUrl,item.nbGuests);
             showIngrediant(item.ingredients);
             showStep(item.instructions);
+            gQuantity=item;
+            oldQuantity=item.nbGuests;
+
         }
     });
 }
 
 // show recipes
 
-function showRecipes(name,img,) {
+function showRecipes(name,img,nbGuests) {
     var result ="";
     result +=`
             <div class="col-2"></div>
@@ -53,7 +59,7 @@ function showRecipes(name,img,) {
                 <h3 class="text-center">${name}</h3>
             </div>
             <div class="col-5" >
-                <img src="${img}" width="250"></div>
+                <img src="${img}" width="255"></div>
             <div class="col-1"></div>
         <div class="container mt-5">
             <div class="row" id="increase">
@@ -67,7 +73,7 @@ function showRecipes(name,img,) {
                             <div class="input-group-prepend">
                                 <button type="button" id="minus" class="btn btn-primary">&minus;</button>
                             </div>
-                                <input class="form-control text-center" type="number" id="member" value="0" min="1" max="15" />
+                                <input class="form-control text-center" type="number" id="member" value="${nbGuests}" min="1" max="15" />
                             <div class="input-group-append">
                                 <button type="button" id="add" class="btn btn-danger">&plus;</button>
                             </div>
@@ -130,7 +136,7 @@ function decreaseMember (minus) {
     var member = parseInt(minus) - 1;
     if(member >= 0) {
       $('#member').val(member);
-      compute(member);
+      culculateMember($('#member').val());
     }
 }
 
@@ -140,8 +146,27 @@ function increaseMember(add) {
     var members = parseInt(add) + 1;
     if(members <= 15) {
         $('#member').val(members);
-        compute(members);
+        culculateMember($('#member').val());
         
     }
 }
 // new Quantity = new guest * old quantity / old guest
+
+function culculateMember(num){
+    var quanti;
+    var newQuanlity;
+    var result ="";
+    gQuantity.ingredients.forEach(item =>{
+        quanti = quantity/oldQuantity;
+        newQuanlity=quanti*num;
+        result += `
+        <tr>
+            <td><img src="${item.iconUrl}" style="width:80px"></td>
+            <td id='quantity'>${item.newQuanlity}</td>
+            <td>${item.unit[0]}</td>
+            <td>${item.name}</td>
+        </tr>
+    `;
+    });
+    $("#test").html(result);
+}
