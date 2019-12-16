@@ -31,6 +31,7 @@ function chooseRecipe(recipes){
         option += `<option value="${item.id}">${item.name}</option>`;
     });
     $('#recipe').append(option);
+    $('#nuth').hide();
 }
 // each recipes
 var gQuantity = [];
@@ -84,6 +85,7 @@ function showRecipes(name,img,nbGuests) {
         </div>
     `;
     $('#recipe-result').html(result);
+    $('#nuth').show();
 }
 
 // show ingradiant
