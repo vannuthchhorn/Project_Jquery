@@ -2,7 +2,7 @@ function getUrl(){
     var url = "https://raw.githubusercontent.com/radytrainer/test-api/master/test.json";
     return url;
 }
-
+// function of catch with html
 $(document).ready(function(){
     requestApi();
     $('#recipe').on('change', function(){
@@ -96,6 +96,9 @@ function showIngrediant(ing){
     });
     $('#test').html(display);
 }
+
+// show step
+
 function showStep(step){
     var instr ="";
     var stepOfMethod = step.split('<step>');
@@ -121,6 +124,8 @@ function addPerson (){
     });
 }
 
+// minus member
+
 function decreaseMember (minus) {
     var member = parseInt(minus) - 1;
     if(member >= 0) {
@@ -128,6 +133,8 @@ function decreaseMember (minus) {
       compute(member);
     }
 }
+
+// sum member
 
 function increaseMember(add) {
     var members = parseInt(add) + 1;
