@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
- 
-    <title>Select form</title>
-</head> 
-<body>
-    <div class="container-fluid mt-4">
-        <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <select id="recipe" class="form-control">
-                    <option value="" disabled selected>Choose Recipe...</option>
-                </select>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
+        <title>Select form</title>
+    </head> 
+    <body>
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <select id="recipe" class="form-control">
+                        <option value="" disabled selected>Choose Recipe...</option>
+                    </select>
+                </div>
+                <div class="col-4"></div>
             </div>
-            <div class="col-4"></div>
-        </div>
-        <hr>
-        <h1 class="display-1 text-center"></h1>
-        <div class="row mt-5" id="recipe-result"></div>
-        <div class="row mt-5">
-            <div class="col-2"></div>
-            <div class="col-4">
-                <table id="test" class="table table-borderless"></table>
+            <hr>
+            <h1 class="display-1 text-center"></h1>
+            <div class="row mt-5" id="recipe-result"></div>
+            <div class="row mt-5">
+                <div class="col-1"></div>
+                <div class="col-5">
+                    <table id="test" class="table table-borderless"></table>
+                </div>
+                <!-- for step of method make food -->
+                <div class="col-1"></div>
+                <div class="col-4" id="ing"></div>
+                <div class="col-1"></div>
             </div>
-
-
-            <div class="col-1"></div>
-            <div class="col-4" id="ing"></div>
-            <div class="col-1"></div>
-        </div>
-    </div>   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="js/select.js"></script>
-</body>
+        </div>   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/select.js"></script>
+    </body>
 </html>

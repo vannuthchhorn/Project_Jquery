@@ -96,12 +96,12 @@ function showIngrediant(ing){
     $('#test').html(display);
 }
 function showStep(step){
-    var ins ="";
-    var data = step.split('<step>');
-    for(var i =1;i<data.length;i++){
-        ins +=`
+    var instr ="";
+    var stepOfMethod = step.split('<step>');
+    for(var i =1;i<stepOfMethod.length;i++){
+        instr +=`
             <h5 class="text-primary">Step: ${i}</h5>
-            <p>${data[i]}</p>
+            <p>${stepOfMethod[i]}</p>
         `;
     }
     $('#ing').html(ins);
@@ -152,3 +152,4 @@ function progressBar(pro) {
     $('#progress').html(pro + "%");
 }
 
+// new Quantity = new guest * old quantity / old guest
