@@ -85,14 +85,12 @@ function showIngrediant(ing){
     var display ="";
     ing.forEach(item =>{
         display +=`
-            <table class="table">
-                <tr>
+            <tr>
+                <td><img src="${item.iconUrl}" width="80px"></td>
                 <td>${parseInt(item.quantity)}</td>
                 <td>${item.unit.charAt(0)}</td>
                 <td>${item.name}</td>
-                <td><img src="${item.iconUrl}" width="100px"></td>
-                </tr>
-            </table>
+            </tr>
         `;
     });
     $('#test').html(display);
