@@ -104,7 +104,7 @@ function showStep(step){
             <p>${stepOfMethod[i]}</p>
         `;
     }
-    $('#ing').html(ins);
+    $('#ing').html(instr);
 }
 
 // button change value of member
