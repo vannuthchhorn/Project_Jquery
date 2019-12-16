@@ -8,6 +8,7 @@ $(document).ready(function(){
     $('#recipe').on('change', function(){
     var recipesId = $('#recipe').val();
     eachRecipes(recipesId);
+    addPerson();
     });
 });
 // get ajax 
@@ -109,7 +110,7 @@ function showStep(step){
 
 // button change value of member
 
-$(document).ready(function() {
+function addPerson (){
     $('#minus').on('click', function() {
         var members = $('#member').val();
         decreaseMember(members);
@@ -118,7 +119,7 @@ $(document).ready(function() {
         var members = $('#member').val();
         increaseMember(members);
     });
-});
+}
 
 function decreaseMember (minus) {
     var member = parseInt(minus) - 1;
