@@ -1,8 +1,11 @@
+// get url
 function getUrl(){
     var url = "https://raw.githubusercontent.com/radytrainer/test-api/master/test.json";
     return url;
 }
+
 // function of catch with html
+
 $(document).ready(function(){
     requestApi();
     $('#recipe').on('change', function(){
@@ -11,6 +14,7 @@ $(document).ready(function(){
     addPerson();
     });
 });
+
 // get ajax 
 
 function requestApi(){
@@ -21,6 +25,7 @@ function requestApi(){
         error: ()=> console.log("Cannot get data"),
     });
 }
+
 //// take api from recipes
 
 var allData =[]; 
@@ -55,19 +60,22 @@ function eachRecipes(id){
 function showRecipes(name,img,nbGuests) {
     var result ="";
     result +=`
-            <div class="col-2"></div>
-            <div class="col-4">
-                <h3 class="text-center">${name}</h3>
-            </div>
-            <div class="col-5" >
-                <img src="${img}" width="255"></div>
-            <div class="col-1"></div>
+        <div class="col-2"></div>
+        <div class="col-4">
+            <h3 class="text-center">${name}</h3>
+        </div>
+        <div class="col-5" >
+            <img src="${img}" width="255"></div>
+        <div class="col-1"></div>
+
+
         <div class="container mt-5">
             <div class="row" id="increase">
                 <div class="col-2"></div>
                 <div class="col-4">
                     <h5>Number of persons </h5>
                 </div>
+
                 <div class="col-3">
                     <form>
                         <div class="input-group">
@@ -149,26 +157,25 @@ function increaseMember(add) {
     if(members <= 15) {
         $('#member').val(members);
         culculateMember($('#member').val());
-        
     }
 }
 // new Quantity = new guest * old quantity / old guest
 
-function culculateMember(num){
-    var quanti;
+function culculateMember(people) {
+    var quantities;
     var newQuanlity;
-    var result ="";
-    gQuantity.ingredients.forEach(item =>{
-        quanti = quantity/oldQuantity;
-        newQuanlity=quanti*num;
+    var result = "";
+    oldQuantity.ingredients.forEach(item => {
+        quantities = quantity/oldGuest;
+        newQuanlity = quantities*people;
         result += `
-        <tr>
-            <td><img src="${item.iconUrl}" style="width:80px"></td>
-            <td id='quantity'>${item.newQuanlity}</td>
-            <td>${item.unit[0]}</td>
-            <td>${item.name}</td>
-        </tr>
-    `;
+            <tr>
+                <td><img src="${item.iconUrl}" style="width:50px"></td>
+                <td id='quantity'>${item.newQuanlity}</td>
+                <td>${item.unit[0]}</td>
+                <td>${item.name}</td>
+            </tr>
+        `;
     });
     $("#test").html(result);
 }
