@@ -41,15 +41,15 @@ function chooseRecipe(recipes){
 // each recipes
 var gQuantity = [];
 
-var oldQuantity = 0;
+var oldGuest = 0;
 function eachRecipes(id){
     allData.forEach(item =>{
         if(item.id == id){
             showRecipes(item.name, item.iconUrl,item.nbGuests);
             showIngrediant(item.ingredients);
             showStep(item.instructions);
-            gQuantity=item;
-            oldQuantity=item.nbGuests;
+            gQuantity=item.ingredients;
+            oldGuest=item.nbGuests;
 
         }
     });
@@ -103,7 +103,7 @@ function showIngrediant(ing){
     ing.forEach(item =>{
         display +=`
             <tr>
-                <td><img src="${item.iconUrl}" width="80px"></td>
+                <td><img src="${item.iconUrl}" style="width:50px"></td>
                 <td>${parseInt(item.quantity)}</td>
                 <td>${item.unit.charAt(0)}</td>
                 <td>${item.name}</td>
@@ -165,15 +165,16 @@ function culculateMember(people) {
     var quantities;
     var newQuanlity;
     var result = "";
-    oldQuantity.ingredients.forEach(item => {
+    gQuantity.forEach(item => {
+        const{name, quantity, unit,iconUrl} = item;
         quantities = quantity/oldGuest;
         newQuanlity = quantities*people;
         result += `
             <tr>
-                <td><img src="${item.iconUrl}" style="width:50px"></td>
-                <td id='quantity'>${item.newQuanlity}</td>
-                <td>${item.unit[0]}</td>
-                <td>${item.name}</td>
+                <td><img src="${iconUrl}" style="width:50px"></td>
+                <td id='quantity'>${newQuanlity}</td>
+                <td>${unit[0]}</td>
+                <td>${name}</td>
             </tr>
         `;
     });
