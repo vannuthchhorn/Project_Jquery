@@ -157,7 +157,7 @@ function showIngrediant(ing){
     ing.forEach(item =>{
         display +=`
             <tr>
-                <td><img src="${item.iconUrl}" style="width:50px"></td>
+                <td><img src="${item.iconUrl}" style="width:50px" class="img-thumbnail"></td>
                 <td>${parseInt(item.quantity)}</td>
                 <td>${item.unit.charAt(0)}</td>
                 <td>${item.name}</td>
