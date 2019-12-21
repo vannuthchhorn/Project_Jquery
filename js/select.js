@@ -11,9 +11,62 @@ $(document).ready(function(){
     $('#recipe').on('change', function(){
     var recipesId = $('#recipe').val();
     eachRecipes(recipesId);
-    addPerson();
+
+        // button change value of member
+
+        $('#minus').on('click', function() {
+            var members = $('#member').val();
+            decreaseMember(members);
+        });
+        $('#add').on('click', function() {
+            var members = $('#member').val();
+            increaseMember(members);
+        });
     });
 });
+
+// minus member
+
+function decreaseMember (minus) {
+    var member = parseInt(minus) - 1;
+    if(member >= 0) {
+      $('#member').val(member);
+      culculateMember($('#member').val());
+    }
+}
+
+
+// sum member
+
+function increaseMember(add) {
+    var members = parseInt(add) + 1;
+    if(members <= 15) {
+        $('#member').val(members);
+        culculateMember($('#member').val());
+    }
+}
+
+
+
+function culculateMember(people) {
+    var quantities;
+    var newQuanlity;
+    var result = "";
+    gQuantity.forEach(item => {
+        const{name, quantity, unit,iconUrl} = item;
+        quantities = quantity/oldGuest;
+        newQuanlity = quantities*people;
+        result += `
+            <tr>
+                <td><img src="${iconUrl}" style="width:50px"></td>
+                <td id='quantity'>${newQuanlity}</td>
+                <td>${unit[0]}</td>
+                <td>${name}</td>
+            </tr>
+        `;
+    });
+    $("#test").html(result);
+}
 
 // get ajax 
 
@@ -128,56 +181,4 @@ function showStep(step){
     $('#ing').html(instr);
 }
 
-// button change value of member
 
-function addPerson (){
-    $('#minus').on('click', function() {
-        var members = $('#member').val();
-        decreaseMember(members);
-    });
-    $('#add').on('click', function() {
-        var members = $('#member').val();
-        increaseMember(members);
-    });
-}
-
-// minus member
-
-function decreaseMember (minus) {
-    var member = parseInt(minus) - 1;
-    if(member >= 0) {
-      $('#member').val(member);
-      culculateMember($('#member').val());
-    }
-}
-
-// sum member
-
-function increaseMember(add) {
-    var members = parseInt(add) + 1;
-    if(members <= 15) {
-        $('#member').val(members);
-        culculateMember($('#member').val());
-    }
-}
-// new Quantity = new guest * old quantity / old guest
-
-function culculateMember(people) {
-    var quantities;
-    var newQuanlity;
-    var result = "";
-    gQuantity.forEach(item => {
-        const{name, quantity, unit,iconUrl} = item;
-        quantities = quantity/oldGuest;
-        newQuanlity = quantities*people;
-        result += `
-            <tr>
-                <td><img src="${iconUrl}" style="width:50px"></td>
-                <td id='quantity'>${newQuanlity}</td>
-                <td>${unit[0]}</td>
-                <td>${name}</td>
-            </tr>
-        `;
-    });
-    $("#test").html(result);
-}
