@@ -119,7 +119,7 @@ function showRecipes(name,img,nbGuests) {
             <h3 class="text-center">${name}</h3>
         </div>
         <div class="col-5" >
-            <img src="${img}" width="255"></div>
+            <img src="${img}" width="255" class="img-thumbnail"></div>
         <div class="col-1"></div>
 
 
