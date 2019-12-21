@@ -40,8 +40,9 @@ function chooseRecipe(recipes){
 }
 // each recipes
 var gQuantity = [];
-
 var oldGuest = 0;
+
+
 function eachRecipes(id){
     allData.forEach(item =>{
         if(item.id == id){
