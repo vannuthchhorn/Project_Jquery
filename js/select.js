@@ -58,7 +58,7 @@ function culculateMember(people) {
         newQuanlity = quantities*people;
         result += `
             <tr>
-                <td><img src="${iconUrl}" style="width:50px"></td>
+                <td><img src="${iconUrl}" style="width:70px" class="img-thumbnail"></td>
                 <td id='quantity'>${newQuanlity}</td>
                 <td>${unit[0]}</td>
                 <td>${name}</td>
@@ -114,20 +114,19 @@ function eachRecipes(id){
 function showRecipes(name,img,nbGuests) {
     var result ="";
     result +=`
-        <div class="col-2"></div>
-        <div class="col-4">
-            <h3 class="text-center">${name}</h3>
+        <div class="col-4"></div>
+        <div class="col-4" >
+            <img src="${img}" width="255" class="img-thumbnail img-fluid mx-auto d-block">
+            <h3 class="text-center mt-5">${name}</h3>
         </div>
-        <div class="col-5" >
-            <img src="${img}" width="255" class="img-thumbnail"></div>
-        <div class="col-1"></div>
+        <div class="col-4"></div>
 
 
         <div class="container mt-5">
             <div class="row" id="increase">
                 <div class="col-2"></div>
                 <div class="col-4">
-                    <h5>Number of persons </h5>
+                    <h5 class="text-center">Number of persons </h5>
                 </div>
 
                 <div class="col-3">
@@ -157,7 +156,7 @@ function showIngrediant(ing){
     ing.forEach(item =>{
         display +=`
             <tr>
-                <td><img src="${item.iconUrl}" style="width:50px" class="img-thumbnail"></td>
+                <td><img src="${item.iconUrl}" style="width:70px" class="img-thumbnail"></td>
                 <td>${parseInt(item.quantity)}</td>
                 <td>${item.unit.charAt(0)}</td>
                 <td>${item.name}</td>
@@ -174,7 +173,7 @@ function showStep(step){
     var stepOfMethod = step.split('<step>');
     for(var i =1;i<stepOfMethod.length;i++){
         instr +=`
-            <h5 class="text-primary">Step: ${i}</h5>
+            <h4 class="text-primary">Step: ${i}</h4>
             <p>${stepOfMethod[i]}</p>
         `;
     }
