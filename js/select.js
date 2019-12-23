@@ -90,6 +90,7 @@ function chooseRecipe(recipes){
     });
     $('#recipe').append(option);
     $('#nuth').hide();
+    $('#footer').hide();
 }
 // each recipes
 var gQuantity = [];
@@ -121,7 +122,6 @@ function showRecipes(name,img,nbGuests) {
         </div>
         <div class="col-4"></div>
 
-
         <div class="container mt-5">
             <div class="row" id="increase">
                 <div class="col-2"></div>
@@ -147,6 +147,7 @@ function showRecipes(name,img,nbGuests) {
     `;
     $('#recipe-result').html(result);
     $('#nuth').show();
+    $('#footer').show();
 }
 
 // show ingradiant
