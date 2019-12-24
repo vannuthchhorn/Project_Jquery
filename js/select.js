@@ -75,7 +75,6 @@ function requestApi(){
         dataType: 'json',
         url: getUrl(),
         success: (data) => chooseRecipe(data.recipes),
-        error: ()=> console.log("Cannot get data"),
     });
 }
 
@@ -91,6 +90,9 @@ function chooseRecipe(recipes){
     $('#recipe').append(option);
     $('#nuth').hide();
     $('#footer').hide();
+    $('#header').hide();
+    $('#inst').hide();
+    $('#int').hide();
 }
 // each recipes
 var gQuantity = [];
@@ -148,6 +150,9 @@ function showRecipes(name,img,nbGuests) {
     $('#recipe-result').html(result);
     $('#nuth').show();
     $('#footer').show();
+    $('#header').show();
+    $('#inst').show();
+    $('#int').show();
 }
 
 // show ingradiant

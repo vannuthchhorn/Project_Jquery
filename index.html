@@ -10,12 +10,22 @@
     <style>
         .ruler{
             border-left: 1px solid rgb(149, 199, 149);
-            height: 40%;
+            height: 50%;
             position: absolute;
             left: 50%;
         }
     </style>
     <body> 
+        <div class="jumbotron jumbotron-fluid bg-secondary" id="header">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <img src="1.png" class="float-left" width="200">
+                        <h3 class="text-white">Passerelles Numeriques Food</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid">
             <div class="jumbotron jumbotron-fluid bg-light row">
                 <div class="col-4"></div>
@@ -29,24 +39,28 @@
             <h1 class="display-1 text-center"></h1>
             <div class="row mt-5" id="recipe-result"></div>
             
-            <div class="row mt-5">
+            <div class="row mt-5" >
                 <div class="col-1"></div>
                 <div class="col-5">
                     <!-- component of food -->
+                    <h4 class="text-center" id="int">Instructions</h4>
                     <table id="test" class="table table-borderless"></table>
                 </div>
                 <!-- ruler -->
                 <div class="ruler" id="nuth"></div>
                 <!-- for step of method make food -->
                 <div class="col-1"></div>
-                <div class="col-4" id="ing"></div>
+                <div class="col-4">
+                    <h4 id="inst">Instructions</h4>
+                    <div  id="ing"></div>
+                </div>
                 <div class="col-1"></div>
             </div>
         </div>  
-        <footer class="jumbotron jumbotron-fluid bg-secondary" id="footer">
-            <div class="container  mt-5">
+        <footer class="jumbotron jumbotron-fluid bg-secondary mt-5" id="footer">
+            <div class="container">
                 <div class="row text-center">
-                    <div class="col-sm">
+                    <div class="col-12">
                         <h3 class="text-white">Made By Vannuth Chhorn</h3>      
                         <p class="text-success"> <b>Email:</b> vannuth.chhorn@student.passerellesnumeriques.org</p>
                         <p class="text-success"> <b>Tel:</b> 0967939628</p>
