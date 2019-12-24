@@ -131,7 +131,7 @@ function showRecipes(name,img,nbGuests) {
                     <h5 class="text-center">Number of persons </h5>
                 </div>
 
-                <div class="col-3">
+                <div class="col-3 float-right">
                     <form>
                         <div class="input-group">
                             <div class="input-group-prepend">
